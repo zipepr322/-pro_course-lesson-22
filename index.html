@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lesson_22</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--------------------------------------#1----------------------------------->
+<!--    <div id="app-4">-->
+<!--        <ul>-->
+<!--            <li><b>First list</b> <span v-if="list1.length===0">(All deals have done =)))</span></li>-->
+<!--            <li v-for="item in list1">{{item}}</li>-->
+<!--        </ul>-->
+<!--        <button @click="changepos" class="buttons">business transfer</button>-->
+<!--        <ul>-->
+<!--            <li> <b>Second list</b><span v-if="list2.length===0">(All deals have done =)))</span> </li>-->
+<!--            <li v-for="item in list2">{{item}}</li>-->
+<!--        </ul>-->
+<!--        <button @click="changeposSecond" >business transfer</button>-->
+<!--    </div>-->
+<!--------------------------------------#2----------------------------------->
+    <div id="app-4">
+        <div class="list">
+            <h2 >List #1</h2>
+            <ul v-for="outerKey in allLists">
+                    <li v-for="innerKey in outerKey">{{innerKey}}</li>
+            </ul>
+        </div>
+        <div class="list">
+            <h2 >List#2</h2>
+            <ul v-for="value in secondList">
+                <li :value="secondList" v-for="innerValue in value" >{{innerValue}}</li>
+            </ul>
+        </div>
+        <button @click="transfer">transfer</button>
+        <input type="checkbox" v-model="defaultValue">
+    </div>
+    <script src="forVueJS.js"></script>
+</body>
+</html>
